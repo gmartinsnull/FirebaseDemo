@@ -68,16 +68,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func sendMsg(sender: AnyObject) {
         
         //SAVES ON FIREBASE DATABASE
-        
-        let newMsg = ["text": "abc001"+String(self.messages.count+1)]
-        let childUpdates = ["/msg\(self.messages.count+1)":newMsg]
+        let key = ref.childByAutoId().key
+        //let newMsg = ["text": "abc001"+String(self.messages.count+1)]
+        //let childUpdates = ["/msg\(self.messages.count+1)":newMsg]
+        let newMsg = ["text":self.txtMsg.text! as String]
+        let childUpdates = ["/\(key)":newMsg]
         self.ref.updateChildValues(childUpdates)
  
-        
-    }
-
-    @IBAction func textfieldTap(sender: AnyObject) {
-        
+        self.view.endEditing(true)
     }
 }
 
