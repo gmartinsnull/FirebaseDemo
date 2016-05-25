@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,17 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-39-g54">
-                                <rect key="frame" x="20" y="550" width="472" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9RJ-DL-KAh"/>
-                                    <constraint firstAttribute="width" constant="472" id="RI6-5R-Z61">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="290"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QaZ-aj-Ylh">
                                 <rect key="frame" x="20" y="20" width="560" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,74 +30,201 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="GFg-Qt-Uy5"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-aE-zyZ">
-                                <rect key="frame" x="500" y="550" width="80" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PF3-qt-4Da">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-39-g54">
+                                        <rect key="frame" x="20" y="550" width="472" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9RJ-DL-KAh"/>
+                                            <constraint firstAttribute="width" constant="472" id="RI6-5R-Z61">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="290"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="30" id="RSN-vR-HMf"/>
+                                            <constraint firstAttribute="height" constant="30" id="c6j-b4-MjA"/>
+                                            <constraint firstAttribute="width" constant="452" id="dYU-z4-hzT"/>
+                                            <constraint firstAttribute="width" constant="290" id="lVm-fX-93F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="RSN-vR-HMf"/>
+                                                <exclude reference="c6j-b4-MjA"/>
+                                                <exclude reference="dYU-z4-hzT"/>
+                                                <exclude reference="lVm-fX-93F"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="9RJ-DL-KAh"/>
+                                                <exclude reference="RI6-5R-Z61"/>
+                                                <include reference="RSN-vR-HMf"/>
+                                                <include reference="dYU-z4-hzT"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="9RJ-DL-KAh"/>
+                                                <exclude reference="RI6-5R-Z61"/>
+                                                <include reference="c6j-b4-MjA"/>
+                                                <include reference="lVm-fX-93F"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="textfieldTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYz-Eb-C2g"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ad-aE-zyZ">
+                                        <rect key="frame" x="500" y="550" width="80" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DwI-3t-gas"/>
+                                            <constraint firstAttribute="width" constant="80" id="J57-sp-C5e"/>
+                                            <constraint firstAttribute="height" constant="30" id="Nvc-rC-Ekp"/>
+                                            <constraint firstAttribute="width" constant="80" id="TGB-5p-hie"/>
+                                            <constraint firstAttribute="height" constant="30" id="XgW-2Y-o8O"/>
+                                            <constraint firstAttribute="width" constant="80" id="tK0-5h-rgs"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DwI-3t-gas"/>
+                                                <exclude reference="J57-sp-C5e"/>
+                                                <exclude reference="XgW-2Y-o8O"/>
+                                                <exclude reference="tK0-5h-rgs"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="DwI-3t-gas"/>
+                                                <exclude reference="Nvc-rC-Ekp"/>
+                                                <exclude reference="TGB-5p-hie"/>
+                                                <include reference="tK0-5h-rgs"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="J57-sp-C5e"/>
+                                                <exclude reference="Nvc-rC-Ekp"/>
+                                                <exclude reference="TGB-5p-hie"/>
+                                                <include reference="XgW-2Y-o8O"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="sendMsg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8v4-Yy-OAj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="DA0-Z7-689"/>
-                                    <constraint firstAttribute="width" constant="80" id="MpY-d4-OdO"/>
-                                    <constraint firstAttribute="height" constant="30" id="Nvc-rC-Ekp"/>
-                                    <constraint firstAttribute="width" constant="80" id="TGB-5p-hie"/>
+                                    <constraint firstItem="5ad-aE-zyZ" firstAttribute="centerX" secondItem="PF3-qt-4Da" secondAttribute="centerX" id="28l-n4-FL0">
+                                        <variation key="heightClass=compact" constant="240"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="400" id="4Hp-s9-jnO"/>
+                                    <constraint firstItem="Ojb-39-g54" firstAttribute="centerX" secondItem="PF3-qt-4Da" secondAttribute="centerX" id="8A5-p5-fWo">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="-35"/>
+                                    </constraint>
+                                    <constraint firstItem="5ad-aE-zyZ" firstAttribute="centerY" secondItem="PF3-qt-4Da" secondAttribute="centerY" id="8tt-Am-dNb"/>
+                                    <constraint firstItem="Ojb-39-g54" firstAttribute="centerY" secondItem="PF3-qt-4Da" secondAttribute="centerY" id="FQD-Zd-fUu"/>
+                                    <constraint firstItem="5ad-aE-zyZ" firstAttribute="centerY" secondItem="PF3-qt-4Da" secondAttribute="centerY" id="PmK-x2-qDc"/>
+                                    <constraint firstItem="5ad-aE-zyZ" firstAttribute="centerX" secondItem="PF3-qt-4Da" secondAttribute="centerX" id="QMr-me-vge">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="152"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="Qot-rB-Yfo"/>
+                                    <constraint firstItem="Ojb-39-g54" firstAttribute="centerY" secondItem="PF3-qt-4Da" secondAttribute="centerY" id="S0k-pb-yvR"/>
+                                    <constraint firstItem="Ojb-39-g54" firstAttribute="centerX" secondItem="PF3-qt-4Da" secondAttribute="centerX" id="ako-y7-MEX">
+                                        <variation key="heightClass=compact" constant="-34"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="k5n-ug-Swc"/>
+                                    <constraint firstAttribute="width" constant="560" id="rYs-iD-AyD"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="DA0-Z7-689"/>
-                                        <exclude reference="MpY-d4-OdO"/>
+                                        <exclude reference="4Hp-s9-jnO"/>
+                                        <exclude reference="Qot-rB-Yfo"/>
+                                        <exclude reference="k5n-ug-Swc"/>
+                                        <exclude reference="rYs-iD-AyD"/>
+                                        <exclude reference="8A5-p5-fWo"/>
+                                        <exclude reference="FQD-Zd-fUu"/>
+                                        <exclude reference="S0k-pb-yvR"/>
+                                        <exclude reference="ako-y7-MEX"/>
+                                        <exclude reference="28l-n4-FL0"/>
+                                        <exclude reference="8tt-Am-dNb"/>
+                                        <exclude reference="PmK-x2-qDc"/>
+                                        <exclude reference="QMr-me-vge"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Qot-rB-Yfo"/>
+                                        <include reference="rYs-iD-AyD"/>
+                                        <include reference="FQD-Zd-fUu"/>
+                                        <include reference="ako-y7-MEX"/>
+                                        <include reference="28l-n4-FL0"/>
+                                        <include reference="PmK-x2-qDc"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="Ojb-39-g54"/>
+                                        <include reference="5ad-aE-zyZ"/>
+                                    </mask>
                                     <mask key="constraints">
-                                        <include reference="DA0-Z7-689"/>
-                                        <include reference="MpY-d4-OdO"/>
+                                        <include reference="4Hp-s9-jnO"/>
+                                        <include reference="k5n-ug-Swc"/>
+                                        <include reference="8A5-p5-fWo"/>
+                                        <include reference="S0k-pb-yvR"/>
+                                        <include reference="8tt-Am-dNb"/>
+                                        <include reference="QMr-me-vge"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <action selector="sendMsg:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8v4-Yy-OAj"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Ojb-39-g54" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2g6-nS-E6z">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-5"/>
-                            </constraint>
-                            <constraint firstItem="5ad-aE-zyZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9bQ-lP-tAu">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                            </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ad-aE-zyZ" secondAttribute="bottom" constant="20" id="Inh-Ut-Qj1">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                            </constraint>
+                            <constraint firstItem="PF3-qt-4Da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Ve-hd-Lch"/>
                             <constraint firstItem="QaZ-aj-Ylh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JpI-aT-x1h"/>
                             <constraint firstItem="QaZ-aj-Ylh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-19" id="LNL-C5-ujm">
                                 <variation key="heightClass=regular-widthClass=compact" constant="-13.5"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5ad-aE-zyZ" secondAttribute="bottom" constant="9" id="UwL-i4-ai9">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ojb-39-g54" secondAttribute="bottom" constant="20" id="pRd-bR-lu3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
-                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PF3-qt-4Da" secondAttribute="bottom" id="UIY-jn-yZE"/>
+                            <constraint firstItem="PF3-qt-4Da" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lnf-Pn-kWo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PF3-qt-4Da" secondAttribute="bottom" id="qTy-2D-mnN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QaZ-aj-Ylh" secondAttribute="bottom" constant="58" id="w2U-ze-hke"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="UwL-i4-ai9"/>
+                                <exclude reference="2Ve-hd-Lch"/>
+                                <exclude reference="lnf-Pn-kWo"/>
+                                <exclude reference="UIY-jn-yZE"/>
+                                <exclude reference="qTy-2D-mnN"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="lnf-Pn-kWo"/>
+                                <include reference="qTy-2D-mnN"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="PF3-qt-4Da"/>
+                            </mask>
                             <mask key="constraints">
-                                <include reference="UwL-i4-ai9"/>
+                                <include reference="2Ve-hd-Lch"/>
+                                <include reference="UIY-jn-yZE"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="messageBar" destination="PF3-qt-4Da" id="ptR-uP-WSB"/>
                         <outlet property="tableView" destination="QaZ-aj-Ylh" id="SK5-Cs-n5r"/>
                         <outlet property="txtMsg" destination="Ojb-39-g54" id="Cq5-ig-XyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="646.5" y="402.75"/>
+            <point key="canvasLocation" x="646" y="402"/>
         </scene>
     </scenes>
 </document>

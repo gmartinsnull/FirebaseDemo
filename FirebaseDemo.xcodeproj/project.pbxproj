@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8C838CA9FAC04FF5934ED81B /* Pods_FirebaseDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08023E8CA9AC463AB562E280 /* Pods_FirebaseDemoUITests.framework */; };
 		98384D4F676F94E78CAB4F57 /* Pods_FirebaseDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C116F670A84ABF2B37C258 /* Pods_FirebaseDemoTests.framework */; };
+		CF6A35E61CF52873009A9232 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF6A35E51CF52873009A9232 /* GoogleService-Info.plist */; };
 		CFDC62041CEF819E00232A71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC62031CEF819E00232A71 /* AppDelegate.swift */; };
 		CFDC62061CEF819E00232A71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC62051CEF819E00232A71 /* ViewController.swift */; };
 		CFDC62091CEF819E00232A71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDC62071CEF819E00232A71 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		CFDC62111CEF819E00232A71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFDC620F1CEF819E00232A71 /* LaunchScreen.storyboard */; };
 		CFDC621C1CEF819E00232A71 /* FirebaseDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC621B1CEF819E00232A71 /* FirebaseDemoTests.swift */; };
 		CFDC62271CEF819E00232A71 /* FirebaseDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC62261CEF819E00232A71 /* FirebaseDemoUITests.swift */; };
-		CFDC62351CEF838F00232A71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFDC62341CEF838F00232A71 /* GoogleService-Info.plist */; };
 		DF389EDBA056008865BBD38F /* Pods_FirebaseDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8AB20E8D5B268042CFDC295 /* Pods_FirebaseDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +46,7 @@
 		793C139F8CC1FC399FE4225A /* Pods-FirebaseDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoUITests/Pods-FirebaseDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AEBC4AF72E5027E328F0C117 /* Pods-FirebaseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemo/Pods-FirebaseDemo.release.xcconfig"; sourceTree = "<group>"; };
 		B50D732620AF779B6005F672 /* Pods-FirebaseDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoTests/Pods-FirebaseDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CF6A35E51CF52873009A9232 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFDC62001CEF819E00232A71 /* FirebaseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDC62031CEF819E00232A71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFDC62051CEF819E00232A71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +61,6 @@
 		CFDC62221CEF819E00232A71 /* FirebaseDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFDC62261CEF819E00232A71 /* FirebaseDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDemoUITests.swift; sourceTree = "<group>"; };
 		CFDC62281CEF819E00232A71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFDC62341CEF838F00232A71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8AB20E8D5B268042CFDC295 /* Pods_FirebaseDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCC56CA018E1D4CCA1119867 /* Pods-FirebaseDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseDemoUITests/Pods-FirebaseDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,7 +137,7 @@
 				CFDC620D1CEF819E00232A71 /* Assets.xcassets */,
 				CFDC620F1CEF819E00232A71 /* LaunchScreen.storyboard */,
 				CFDC62121CEF819E00232A71 /* Info.plist */,
-				CFDC62341CEF838F00232A71 /* GoogleService-Info.plist */,
+				CF6A35E51CF52873009A9232 /* GoogleService-Info.plist */,
 				CFDC620A1CEF819E00232A71 /* FirebaseDemo.xcdatamodeld */,
 			);
 			path = FirebaseDemo;
@@ -284,7 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFDC62111CEF819E00232A71 /* LaunchScreen.storyboard in Resources */,
-				CFDC62351CEF838F00232A71 /* GoogleService-Info.plist in Resources */,
+				CF6A35E61CF52873009A9232 /* GoogleService-Info.plist in Resources */,
 				CFDC620E1CEF819E00232A71 /* Assets.xcassets in Resources */,
 				CFDC62091CEF819E00232A71 /* Main.storyboard in Resources */,
 			);

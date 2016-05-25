@@ -16,6 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var txtMsg: UITextField!
     var ref:FIRDatabaseReference!
     
+    @IBOutlet weak var messageBar: UIView!
+    
     var messages:[FIRDataSnapshot] = []
     
 
@@ -74,5 +76,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    @IBAction func textfieldTap(sender: AnyObject) {
+        
+    }
 }
 
