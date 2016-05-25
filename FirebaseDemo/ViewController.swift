@@ -18,45 +18,42 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var messages:[FIRDataSnapshot] = []
     
-    var counter = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //var messagesDBRef = FIRDatabase.reference("https://fir-demo-37e4a.firebaseio.com/messages")
-        //messagesDBRef = FIRDatabase.database().reference()
         
-        self.ref = FIRDatabase.database().reference()
+        self.ref = FIRDatabase.database().reference().child("messages")
         
-        self.ref.child("messages").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            // Get user value
+        //FETCHES MESSAGES
+        self.ref.observeEventType(.Value, withBlock: { (snapshot) in
             //print(snapshot.value!)
+            self.messages = []
             
-            for txt in snapshot.children {
-                self.messages.append(txt as! FIRDataSnapshot)
-                
+            for msg in snapshot.children.allObjects {
+                self.messages.append(msg as! FIRDataSnapshot)
+                //print(msg.value["text"] as! NSString)
             }
-            
             //print(self.messages[0].value!)
             //self.counter = self.messages.count
             self.tableView.reloadData()
+            //self.ref.removeAllObservers()
+            //print(self.messages[0].value!["text"] as! NSString)
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "mycell")
-        //cell.textLabel!.text="row#\(indexPath.row)"
-        //cell.detailTextLabel!.text="subtitle#\(indexPath.row)"
-        cell.textLabel?.text = self.messages[indexPath.row].value as? String
+        
+        cell.textLabel?.text = self.messages[indexPath.row].value!["text"] as? String
         
         return cell
     }
@@ -67,20 +64,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @IBAction func sendMsg(sender: AnyObject) {
-        //SAVES ON FIREBASE
         
-        let key = self.ref.child("messages").childByAutoId().key
-        let msg = ["text": "abc001"+String(self.messages.count+1)]
-        let childUpdates = ["/messages/\(key)": msg]
+        //SAVES ON FIREBASE DATABASE
+        
+        let newMsg = ["text": "abc001"+String(self.messages.count+1)]
+        let childUpdates = ["/msg\(self.messages.count+1)":newMsg]
         self.ref.updateChildValues(childUpdates)
-        //counter += 1
+ 
         
-        //ADDS ON TABLEVIEW
-        self.ref.observeEventType(.ChildAdded, withBlock: {(snapshot) -> Void in
-            self.messages.append(snapshot)
-            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow:self.messages.count-1, inSection:0)], withRowAnimation: UITableViewRowAnimation.Automatic)
-            NSLog("%@", self.messages)
-        })
     }
 
 }
